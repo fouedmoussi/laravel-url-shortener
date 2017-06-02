@@ -1,2 +1,0 @@
-# laravel-url-shortener
-BUILD AN URL SHORTENER WEBSITE WITH LARAVEL
