@@ -17,11 +17,18 @@ class LinkShortenerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth','checkLinksNumber']);
+        $this->middleware('auth');
+        $this->middleware('checkLinksNumber')->except('linksList');
         $this->middleware(function ($request, $next) {
             config(['app.locale' =>  session('locale', 'en')]);
             return $next($request);
         });
+    }
+
+
+    public function linksList()
+    {
+        return view('links.linksList')->with(['links' => Auth::user()->links()->get()]);
     }
 
     public function getForm()
@@ -62,5 +69,11 @@ class LinkShortenerController extends Controller
 	    }
 
 
+    }
+
+    public function deleteLink($linkId)
+    {
+        Link::findOrFail($linkId)->delete();
+        return redirect()->to('/my-links')->with('success', 'Supprimé avec succès.');
     }
 }

@@ -12,15 +12,18 @@
 */
 
 Auth::routes();
+Route::get('/my-links', 'LinkShortenerController@linksList');
 Route::get('/', 'LinkShortenerController@getForm');
 Route::post('/', 'LinkShortenerController@postForm');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::delete('/link/{id}', 'LinkShortenerController@deleteLink');
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/en', function(){
 	session(['locale' => 'en']);
 	return redirect()->back();
 });
 
 Route::get('/fr', function(){
+	activity()->log('Look mum, I logged something');
 	session(['locale' => 'fr']);
 	return redirect()->back();
 });

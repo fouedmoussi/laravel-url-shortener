@@ -48,8 +48,14 @@
                         @else
 
                         <li>
-                            <a href="">{{trans('links.myLinks')}}</a>
+                            <a href="{{url('/')}}">{{trans('links.shortify')}}</a>
                         </li>
+
+                        <li>
+                            <a href="{{url('my-links')}}">{{trans('links.myLinks')}}</a>
+                        </li>
+
+                        
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -93,6 +99,8 @@
                                 </li>
                             </ul>
                         </li>
+
+                        
 
 
                     @endif
