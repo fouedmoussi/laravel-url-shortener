@@ -7,6 +7,10 @@
       <div class="panel panel-default">
         <div class="panel-heading">My links</div>
         <div class="panel-body">
+        @if(Session::has('success'))
+        <div class="alert alert-success" role="alert">Success</div>
+        @endif
+        @if($links->count())
           <table class="table table-responsive">
             <thead>
               <tr >
@@ -47,6 +51,12 @@
             @endforeach()
           </tbody>
         </table>
+        @else
+        <div class="alert alert-warning" role="alert">
+          No links found.
+          Try one 
+        </div>
+        @endif
       </div>
     </div>
   </div>
