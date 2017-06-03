@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+Route::get('/', 'LinkShortenerController@getForm');
+Route::post('/', 'LinkShortenerController@postForm');
+Route::get('/home', 'HomeController@index')->name('home');

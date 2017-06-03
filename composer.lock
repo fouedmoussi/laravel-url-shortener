@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a9901c5bc39dac11856c1a551f39db74",
-    "content-hash": "75ba431fb4ccf48ce8a358d938bb8d86",
+    "hash": "240da228e2ec666dddea46f9de629808",
+    "content-hash": "8270762d94de76a6296534b32d62dfd3",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -564,6 +564,55 @@
                 "storage"
             ],
             "time": "2017-04-28 10:15:08"
+        },
+        {
+            "name": "mbarwick83/shorty",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mbarwick83/shorty.git",
+                "reference": "5218397c216c3288ad5a9bf4d6e92879a24813b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mbarwick83/shorty/zipball/5218397c216c3288ad5a9bf4d6e92879a24813b5",
+                "reference": "5218397c216c3288ad5a9bf4d6e92879a24813b5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mbarwick83\\Shorty\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Barwick",
+                    "email": "mike@barwickandco.com"
+                }
+            ],
+            "description": "Google Url Shortener API Package for Laravel 5.1",
+            "homepage": "https://github.com/mbarwick83/shorty",
+            "keywords": [
+                "api",
+                "google",
+                "laravel",
+                "shortener",
+                "url"
+            ],
+            "time": "2016-11-07 21:06:19"
         },
         {
             "name": "monolog/monolog",

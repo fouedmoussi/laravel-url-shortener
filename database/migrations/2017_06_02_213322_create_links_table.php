@@ -17,6 +17,9 @@ class CreateLinksTable extends Migration
                 $table->increments('id');
                 $table->text('url');
                 $table->string('hash',400);
+                $table->unsignedInteger('user_id');
+                $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+                $table->timestamps();
         });
     }
 
