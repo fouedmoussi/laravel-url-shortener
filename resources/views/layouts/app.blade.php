@@ -48,7 +48,7 @@
                         @else
 
                         <li>
-                            <a href="">My links</a>
+                            <a href="">{{trans('links.myLinks')}}</a>
                         </li>
 
                         <li class="dropdown">
@@ -61,7 +61,8 @@
                                     <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                                    Logout
+                                    
+                                    {{ trans('links.Logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -75,16 +76,16 @@
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Language <span class="caret"></span>
+                                {{ trans('links.Language') }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="{{ url('en') }}">
                                         En
                                     </a>
 
-                                    <a href="#">
+                                    <a href="{{ url('fr') }}">
                                         Fr
                                     </a>
 

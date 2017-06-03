@@ -17,12 +17,17 @@ class LinkShortenerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth','checkUserLinksNumber']);
+        $this->middleware(['auth','checkLinksNumber']);
+        $this->middleware(function ($request, $next) {
+            config(['app.locale' =>  session('locale', 'en')]);
+            return $next($request);
+        });
     }
 
     public function getForm()
     {
-    	return view('links.form');
+
+        return view('links.form');
     }
 
     public function postForm(Request $request)

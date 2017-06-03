@@ -15,3 +15,12 @@ Auth::routes();
 Route::get('/', 'LinkShortenerController@getForm');
 Route::post('/', 'LinkShortenerController@postForm');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/en', function(){
+	session(['locale' => 'en']);
+	return redirect()->back();
+});
+
+Route::get('/fr', function(){
+	session(['locale' => 'fr']);
+	return redirect()->back();
+});
