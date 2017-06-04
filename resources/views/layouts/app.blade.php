@@ -59,6 +59,8 @@
 
                         <li>
                             <a href="{{route('all-links' , ['lang'=> app()->getLocale()])}}">   {{trans('links.allLinks')}}
+                                <span style="{{$totalLinks >= 100 ?     'color: #a94442;' : ''}}">({{$totalLinks}})
+                                </span> 
                             </a>
                         </li>
 

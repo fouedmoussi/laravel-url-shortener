@@ -14,7 +14,7 @@ return [
     'insertYourLinkHere' => 'Insert your Link here and press enter !',
     'delete' => 'Delete',
     'yourShortLink' => 'Your short link ',
-    'warningMsg' => 'Each user can have a maximum of 10 links',
+    'warningMsg' => 'Each user can have a maximum of 10 links and the total number of links in the application must not exceed 100 links',
     'warning' => 'Warning!',
     'deleteMsg' => 'Are you sure tou want to delete this link?',
     'success' => 'Succes!',

@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Link;
 use Carbon\Carbon;
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,8 +18,16 @@ class AppServiceProvider extends ServiceProvider
         // For using MariaDB 
         Schema::defaultStringLength(191);
         
-        //Links older than 24 hours must be deleted
-        Link::where('created_at', '<=', Carbon::now()->subDays(1)->toDateTimeString())->delete();
+        if(Schema::hasTable('links'))
+        {
+            //Links older than 24 hours must be deleted
+            Link::where('created_at', '<=', Carbon::now()->subDays(1)->toDateTimeString())->delete();
+
+            view()->composer('layouts.app', function($view)
+            {
+                $view->with('totalLinks', Link::count());
+            });
+        }
 
 
     }

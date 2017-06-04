@@ -30,10 +30,8 @@ class LinkShortenerController extends Controller
     */
     public function linksList()
     {   
-        $links = Link::paginate(10);
-        $pagination = $links->setPath('')->render();
-        return view('links.linksList')->with(['links' => $links, 'pagination' => $pagination
-        ]);
+        $links = Link::all();
+        return view('links.linksList')->with(['links' => $links]);
     }
 
     /**

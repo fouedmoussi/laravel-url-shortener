@@ -47,10 +47,7 @@
             @endforeach()
           </tbody>
         </table>
-        <div class="pull-right">
-          {!! $pagination !!}
-        </div>
-
+      
         @else
         <div class="alert alert-warning" role="alert">
           {{trans('links.noLinks')}} <a href="{{route('get-form', ['lang'=> app()->getLocale()])}}">{{trans('links.startShortening')}}</a>
