@@ -36,15 +36,15 @@ class LoginController extends Controller
      * @return void
      */
     public function __construct()
-    {
-        $this->redirectTo ='/?lang='.app()->getLocale();
+    {   
+        $this->redirectTo ='/?lang='.request()->lang;
         $this->middleware('guest')->except('logout');
     }
 
 
     public function logout(Request $request)
     {
-            $this->performLogout($request);
-            return redirect()->route('login', ['lang' => app()->getLocale()]); 
+        $this->performLogout($request);
+        return redirect()->route('login', ['lang' => app()->getLocale()]); 
     }
 }

@@ -16,12 +16,10 @@ class SetLanguage
     public function handle($request, Closure $next)
     {   if(in_array($request->lang , ['en', 'fr']))
         {
-            var_dump('here1');
-            app()->setLocale($request->lang);
-                       
+            app()->setLocale($request->lang);                       
         }
         else
-        {  var_dump('here2');
+        {
            return redirect()->route($request->route()->getName(), ['lang' => 'en']);
         }
         
