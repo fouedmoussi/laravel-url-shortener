@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Link');
     }
+
+    public function logs()
+    {
+        return $this->hasMany('App\Models\ActivityLog');
+    }
 }

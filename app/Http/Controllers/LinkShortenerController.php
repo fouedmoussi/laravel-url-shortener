@@ -19,10 +19,6 @@ class LinkShortenerController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('checkLinksNumber')->except('linksList');
-        $this->middleware(function ($request, $next) {
-            config(['app.locale' =>  session('locale', 'en')]);
-            return $next($request);
-        });
     }
 
 

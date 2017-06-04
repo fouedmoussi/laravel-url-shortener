@@ -10,20 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => ['trackUserNavigation']], function(){
+	Auth::routes();
 
-Auth::routes();
-Route::get('/my-links', 'LinkShortenerController@linksList');
-Route::get('/', 'LinkShortenerController@getForm');
-Route::post('/', 'LinkShortenerController@postForm');
-Route::delete('/link/{id}', 'LinkShortenerController@deleteLink');
-// Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/en', function(){
-	session(['locale' => 'en']);
-	return redirect()->back();
+	Route::group(['prefix' => '{lang?}'], function () {
+		Route::get('/my-links', 'LinkShortenerController@linksList');
+		Route::get('/', 'LinkShortenerController@getForm');
+		Route::post('/', 'LinkShortenerController@postForm');
+		Route::delete('/link/{id}', 'LinkShortenerController@deleteLink');
+		// Route::get('/home', 'HomeController@index')->name('home');
+	});
 });
 
-Route::get('/fr', function(){
-	activity()->log('Look mum, I logged something');
-	session(['locale' => 'fr']);
-	return redirect()->back();
-});

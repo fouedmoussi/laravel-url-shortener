@@ -10,7 +10,7 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
         "mbarwick83/shorty": "^1.0",
-        "spatie/laravel-activitylog": "^1.15"
+        "torann/geoip": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -169,7 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Mbarwick83\Shorty\ShortyServiceProvider::class,
-        Spatie\Activitylog\ActivitylogServiceProvider::class,
+        \Torann\GeoIP\GeoIPServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -231,6 +231,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Shorty'    => Mbarwick83\Shorty\Facades\Shorty::class,
+        'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
 
     ],
 

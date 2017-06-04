@@ -28,8 +28,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand" href="#">
+                        Laravel url shortener
                     </a>
                 </div>
 
@@ -48,11 +48,11 @@
                         @else
 
                         <li>
-                            <a href="{{url('/')}}">{{trans('links.shortify')}}</a>
+                            <a href="{{url(config('app.locale'))}}">{{trans('links.shortify')}}</a>
                         </li>
 
                         <li>
-                            <a href="{{url('my-links')}}">{{trans('links.myLinks')}}</a>
+                            <a href="{{url(config('app.locale').'/my-links')}}">{{trans('links.myLinks')}}</a>
                         </li>
 
                         
