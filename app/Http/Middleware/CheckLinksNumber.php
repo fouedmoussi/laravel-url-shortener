@@ -18,7 +18,7 @@ class CheckLinksNumber
     public function handle($request, Closure $next)
     {
         if (Link::count() >= 100 || Auth::user()->links()->count() >= 10) {
-            return response('Unauthorized.', 401);
+            return redirect()->route('user-links', ['lang' => app()->getLocale()])->with('warning', 'Unauthorized to create more then 10 links'); 
         }
 
         return $next($request);

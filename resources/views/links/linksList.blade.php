@@ -5,27 +5,24 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
-        <div class="panel-heading">All links</div>
+        <div class="panel-heading">{{trans('links.allLinks')}}</div>
         <div class="panel-body">
-        @if(Session::has('success'))
-        <div class="alert alert-success" role="alert">Success</div>
-        @endif
         @if($links->count())
           <table class="table table-responsive">
             <thead>
               <tr >
                 <th class="text-center" width="30%">
-                  Link
+                  {{trans('links.link')}}
                 </th>
                 <th class="text-center" width="20%">
-                  Hash
+                  {{trans('links.hash')}}
                 </th>
                 <th class="text-center" width="20%">
-                  Created by
+                  {{trans('links.createdBy')}}
                 </th>
 
                 <th class="text-center" width="30%">
-                  Since
+                  {{trans('links.since')}}
                 </th>
               </tr>
             </thead>

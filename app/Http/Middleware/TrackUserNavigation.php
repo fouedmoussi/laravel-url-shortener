@@ -19,7 +19,7 @@ class TrackUserNavigation
     {
         ActivityLog::create(
         ['access_date_time' => Carbon::now(),
-             'visited_link' => $request->url(),
+             'visited_link' => $request->fullUrl(),
              'ip_address' => $request->ip(),
              'country' => GeoIP($request->ip())->country,
              'user_agent' => $request->server('HTTP_USER_AGENT'),

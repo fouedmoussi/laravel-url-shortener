@@ -14,8 +14,11 @@ class SetLanguage
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {
-        // app()->setLocale($request->lang == 'fr' ? 'fr' : 'en');
+    {   if(!in_array($request->lang , ['en', 'fr']))
+        {
+           return redirect()->route($request->route()->getName(), ['lang' => 'en']); 
+        }
+        app()->setLocale($request->lang == 'fr' ? 'fr' : 'en');
         return $next($request);
     }
 }

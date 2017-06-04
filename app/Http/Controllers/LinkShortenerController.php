@@ -55,8 +55,7 @@ class LinkShortenerController extends Controller
 	    ->first();
 	    //If we have the URL saved in our database already, we provide that information back to view.
 	    if($link) {
-	      return redirect()->to('/')
-	      ->with('hash',$link->hash);
+	      return redirect()->route('get-form', ['lang' => app()->getLocale()])->with('hash',$link->hash);
 	      //Else we create a new unique URL
 	    } else {
 	      //First we create a new unique Hash
@@ -67,8 +66,7 @@ class LinkShortenerController extends Controller
 
 
 	      //And then we return the new shortened URL info to our action
-	      return redirect()->to('/')
-	      ->with('hash',$newHash);
+	      return redirect()->route('get-form', ['lang' => app()->getLocale()])->with('hash', $newHash);
 
 	    }
 

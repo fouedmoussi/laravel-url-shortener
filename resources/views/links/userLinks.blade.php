@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
-        <div class="panel-heading">My links</div>
+        <div class="panel-heading">{{trans('links.myLinks')}}</div>
         <div class="panel-body">
         @if(Session::has('success'))
         <div class="alert alert-success" role="alert">Success</div>
@@ -15,13 +15,13 @@
             <thead>
               <tr >
                 <th class="text-center" width="40%">
-                  Link
+                  {{trans('links.link')}}
                 </th>
                 <th class="text-center" width="30%">
-                  Hash
+                  {{trans('links.hash')}}
                 </th>
                 <th class="text-center" width="20%">
-                  Since
+                  {{trans('links.since')}}
                 </th>
                 <th class="text-center" width="10%">
                   Action
@@ -43,7 +43,7 @@
                </td>
                <td width="10%" class="text-center" >
                 {!! Form::open(['method' => 'DELETE', 'url' => ['link', $link->id]]) !!}
-                  {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer ce lien ?\')']) !!}
+                  {!! Form::submit(trans('links.delete'), ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer ce lien ?\')']) !!}
                 {!! Form::close() !!}
               </td>
 

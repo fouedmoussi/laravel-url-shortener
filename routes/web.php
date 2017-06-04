@@ -11,18 +11,14 @@
 |
 */
 
-Route::get('/all-links', 'LinkShortenerController@linksList');
 
 Route::group(['middleware' => ['trackUserNavigation']], function(){
 	Auth::routes();
-
-	Route::group(['prefix' => '{lang?}'], function () {
-
-		Route::get('/my-links', 'LinkShortenerController@userLinks');
-		Route::get('/', 'LinkShortenerController@getForm');
-		Route::post('/', 'LinkShortenerController@postForm');
-		Route::delete('/link/{id}', 'LinkShortenerController@deleteLink');
-		// Route::get('/home', 'HomeController@index')->name('home');
-	});
+	Route::get('/all-links', 'LinkShortenerController@linksList')->name('all-links');
+	Route::get('/my-links', 'LinkShortenerController@userLinks')->name('user-links');
+	Route::get('/', 'LinkShortenerController@getForm')->name('get-form');
+	Route::post('/', 'LinkShortenerController@postForm')->name('post-form');
+	Route::delete('/link/{id}', 'LinkShortenerController@deleteLink')->name('delete-link');
+	// Route::get('/home', 'HomeController@index')->name('home');
 });
 
