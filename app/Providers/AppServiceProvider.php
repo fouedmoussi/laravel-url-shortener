@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         
         //Links older than 24 hours must be deleted
-        // Link::where('created_at', '<=', Carbon::now()->subDays(1)->toDateTimeString())->delete();
+        Link::where('created_at', '<=', Carbon::now()->subDays(1)->toDateTimeString())->delete();
 
 
     }
