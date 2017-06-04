@@ -16,31 +16,52 @@ class LinkShortenerController extends Controller
      * @return void
      */
     public function __construct()
-    {
+
+    {   // Uses 'auth' Middleware
         $this->middleware('auth')->except('linksList');
+        // Uses 'checkLinksNumber' Middleware to check links number (must be < 10)
         $this->middleware('checkLinksNumber' )->except(['userLinks', 'linksList','deleteLink']);
     }
 
-
+    /**
+     * Show the hole links list
+     *
+     * @return View
+    */
     public function linksList()
-    {
+    {   
         $links = Link::paginate(10);
         $pagination = $links->setPath('')->render();
         return view('links.linksList')->with(['links' => $links, 'pagination' => $pagination
         ]);
     }
 
+    /**
+     * Show only user's links list
+     * @return View
+    */
     public function userLinks()
-    {
+    {   
         return view('links.userLinks')->with(['links' => Auth::user()->links()->get()]);
     }
 
+
+    /**
+     * Show the 'Shortify' form
+     *
+     * @return View
+    */ 
     public function getForm()
     {
-
         return view('links.form');
     }
 
+    /**
+     * handle creating the new short link
+     *
+     * @param Request $request
+     * @return string|View
+     */
     public function postForm(Request $request)
     {
     	
@@ -73,6 +94,12 @@ class LinkShortenerController extends Controller
 
     }
 
+    /**
+     * handle deleting a specific link
+     *
+     * @param string $linkId
+     * @return string|View
+    */
     public function deleteLink($linkId)
     {
         Link::findOrFail($linkId)->delete();

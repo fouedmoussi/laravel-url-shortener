@@ -53,11 +53,13 @@
 
                         
                         <li>
-                            <a href="{{route('get-form', ['lang'=> app()->getLocale()])}}">{{trans('links.shortify')}}</a>
+                            <a href="{{route('get-form', ['lang'=> app()->getLocale()])}}"> {{trans('links.shortify')}}
+                            </a>
                         </li>
 
                         <li>
-                            <a href="{{route('all-links' , ['lang'=> app()->getLocale()])}}">{{trans('links.allLinks')}}</a>
+                            <a href="{{route('all-links' , ['lang'=> app()->getLocale()])}}">   {{trans('links.allLinks')}}
+                            </a>
                         </li>
 
 

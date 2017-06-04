@@ -13,12 +13,19 @@
 
 
 Route::group(['middleware' => ['trackUserNavigation']], function(){
+	// Authentication Routes...
 	Auth::routes();
+	//Route to  display the links list
 	Route::get('/all-links', 'LinkShortenerController@linksList')->name('all-links');
+	
+	//Route to  display only user's links  list
 	Route::get('/my-links', 'LinkShortenerController@userLinks')->name('user-links');
+
+	// Routes to create and return a shortened URL given a long URL
 	Route::get('/', 'LinkShortenerController@getForm')->name('get-form');
 	Route::post('/', 'LinkShortenerController@postForm')->name('post-form');
+
+	//Route to delete a specific link by {id}
 	Route::delete('/link/{id}', 'LinkShortenerController@deleteLink')->name('delete-link');
-	// Route::get('/home', 'HomeController@index')->name('home');
 });
 
