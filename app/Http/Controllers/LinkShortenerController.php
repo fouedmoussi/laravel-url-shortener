@@ -18,7 +18,7 @@ class LinkShortenerController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except('linksList');
-        $this->middleware('checkLinksNumber' )->except(['userLinks', 'linksList']);
+        $this->middleware('checkLinksNumber' )->except(['userLinks', 'linksList','deleteLink']);
     }
 
 
@@ -76,6 +76,6 @@ class LinkShortenerController extends Controller
     public function deleteLink($linkId)
     {
         Link::findOrFail($linkId)->delete();
-        return redirect()->to('/my-links')->with('success', 'Supprimé avec succès.');
+        return redirect()->route('user-links', ['lang' => app()->getLocale()])->with('success', 'Supprimé avec succès.');
     }
 }

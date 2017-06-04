@@ -11,17 +11,17 @@
           <table class="table table-responsive">
             <thead>
               <tr >
-                <th class="text-center" width="30%">
+                <th class="text-center">
                   {{trans('links.link')}}
                 </th>
-                <th class="text-center" width="20%">
+                <th class="text-center">
                   {{trans('links.hash')}}
                 </th>
-                <th class="text-center" width="20%">
+                <th class="text-center">
                   {{trans('links.createdBy')}}
                 </th>
 
-                <th class="text-center" width="30%">
+                <th class="text-center">
                   {{trans('links.since')}}
                 </th>
               </tr>
@@ -29,18 +29,18 @@
             <tbody>
               @foreach($links as $link)
               <tr>
-                <td width="30%" class="text-center">
+                <td class="text-center">
                   <a title="{{$link->url}}" href="{{$link->url}}" style="border-bottom: 1px dashed #1E88E5;"> {{$link->url}}</a>
                 </td>
-                <td width="20%" class="text-center">
+                <td class="text-center">
                   <a title="{{$link->hash}}" href="{{$link->hash}}" style="border-bottom: 1px dashed #1E88E5;"> {{$link->hash}}</a>
                 </td>
 
-                <th class="text-center" width="20%">
+                <th class="text-center">
                   {{$link->user->name}}
                 </th>
 
-                <td width="30%" class="text-center">
+                <td class="text-center">
                  {{$link->created_at->diffForHumans()}}
                </td>
             </tr>
@@ -53,8 +53,7 @@
 
         @else
         <div class="alert alert-warning" role="alert">
-          No links found.
-          Try one 
+          {{trans('links.noLinks')}} <a href="{{route('get-form', ['lang'=> app()->getLocale()])}}">{{trans('links.startShortening')}}</a>
         </div>
         @endif
       </div>

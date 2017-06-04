@@ -12,6 +12,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style type="text/css">
+        table {
+            table-layout: fixed;
+        }
+        td
+        {
+            word-wrap: break-word;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -58,7 +67,9 @@
                         <li><a href="{{ route('register', ['lang'=> app()->getLocale()]) }}">{{trans('register.register')}}</a></li>
                         @else
                         <li>
-                            <a href="{{route('user-links', ['lang'=> app()->getLocale()])}}">{{trans('links.myLinks')}}</a>
+                            <a href="{{route('user-links', ['lang'=> app()->getLocale()])}}">{{trans('links.myLinks')}} 
+                               <span style="{{Auth::user()->links()->count() >= 10 ?     'color: #a94442;' : ''}}">({{Auth::user()->links()->count()}})</span> 
+                            </a>
                         </li>
 
                         

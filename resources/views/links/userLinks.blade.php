@@ -7,23 +7,32 @@
       <div class="panel panel-default">
         <div class="panel-heading">{{trans('links.myLinks')}}</div>
         <div class="panel-body">
+
+        @if(Session::has('warning'))
+        <div class="alert alert-warning" role="alert">
+          <strong>{{trans('links.warning')}}</strong> {{trans('links.warningMsg')}}
+        </div>
+        @endif
+
         @if(Session::has('success'))
-        <div class="alert alert-success" role="alert">Success</div>
+        <div class="alert alert-success" role="alert">
+          <strong>{{trans('links.success')}}</strong> {{trans('links.successMsg')}}
+        </div>
         @endif
         @if($links->count())
-          <table class="table table-responsive">
+          <table class="table">
             <thead>
               <tr >
-                <th class="text-center" width="40%">
-                  {{trans('links.link')}}
+                <th class="text-center">
+                  <p>{{trans('links.link')}}</p>
                 </th>
-                <th class="text-center" width="30%">
+                <th class="text-center">
                   {{trans('links.hash')}}
                 </th>
-                <th class="text-center" width="20%">
+                <th class="text-center" >
                   {{trans('links.since')}}
                 </th>
-                <th class="text-center" width="10%">
+                <th class="text-center">
                   Action
                 </th>
                 
@@ -32,19 +41,20 @@
             <tbody>
               @foreach($links as $link)
               <tr>
-                <td width="40%" class="text-center">
+                <td class="text-center">
                   <a title="{{$link->url}}" href="{{$link->url}}" style="border-bottom: 1px dashed #1E88E5;"> {{$link->url}}</a>
                 </td>
-                <td width="30%" class="text-center">
+                <td class="text-center">
                   <a title="{{$link->hash}}" href="{{$link->hash}}" style="border-bottom: 1px dashed #1E88E5;"> {{$link->hash}}</a>
                 </td>
-                <td width="20%" class="text-center">
+                <td  class="text-center">
                  {{$link->created_at->diffForHumans()}}
                </td>
-               <td width="10%" class="text-center" >
-                {!! Form::open(['method' => 'DELETE', 'url' => ['link', $link->id]]) !!}
-                  {!! Form::submit(trans('links.delete'), ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm(\'Vraiment supprimer ce lien ?\')']) !!}
+               <td class="text-center" >
+                {!! Form::open(['method' => 'DELETE', 'route' => ['delete-link', $link->id, 'lang='.app()->getLocale()]])!!}
+                  {!! Form::submit(trans('links.delete'), ['class' => 'btn btn-danger btn-block', 'onclick' => 'return confirm("'.trans("links.deleteMsg").'")']) !!}
                 {!! Form::close() !!}
+                
               </td>
 
             </tr>
@@ -53,8 +63,7 @@
         </table>
         @else
         <div class="alert alert-warning" role="alert">
-          No links found.
-          Try one 
+          {{trans('links.noLinks')}} <a href="{{route('get-form', ['lang'=> app()->getLocale()])}}">{{trans('links.startShortening')}}</a>
         </div>
         @endif
       </div>

@@ -13,6 +13,13 @@ return [
     'since' => 'Since',
     'insertYourLinkHere' => 'Insert your Link here and press enter !',
     'delete' => 'Delete',
-    'yourShortLink' => 'Your short link '
+    'yourShortLink' => 'Your short link ',
+    'warningMsg' => 'Each user can have a maximum of 10 links',
+    'warning' => 'Warning!',
+    'deleteMsg' => 'Are you sure tou want to delete this link?',
+    'success' => 'Succes!',
+    'successMsg' => 'Link has been successfully deleted ',
+    'noLinks' => 'No links to display?',
+    'startShortening' => 'Start shortening now'
     
 ];
