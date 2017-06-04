@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 use App\Models\ActivityLog;
 class TrackUserNavigation
 {
@@ -18,7 +17,7 @@ class TrackUserNavigation
     public function handle($request, Closure $next)
     {
         ActivityLog::create(
-        ['access_date_time' => Carbon::now(),
+        ['access_date_time' => date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']),
              'visited_link' => $request->fullUrl(),
              'ip_address' => $request->ip(),
              'country' => GeoIP($request->ip())->country,
