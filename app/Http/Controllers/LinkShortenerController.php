@@ -17,14 +17,22 @@ class LinkShortenerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('checkLinksNumber')->except('linksList');
+        $this->middleware('auth')->except('linksList');
+        $this->middleware('checkLinksNumber' )->except(['userLinks', 'linksList']);
     }
 
 
     public function linksList()
     {
-        return view('links.linksList')->with(['links' => Auth::user()->links()->get()]);
+        $links = Link::paginate(10);
+        $pagination = $links->setPath('')->render();
+        return view('links.linksList')->with(['links' => $links, 'pagination' => $pagination
+        ]);
+    }
+
+    public function userLinks()
+    {
+        return view('links.userLinks')->with(['links' => Auth::user()->links()->get()]);
     }
 
     public function getForm()

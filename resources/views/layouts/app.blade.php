@@ -80,18 +80,19 @@
 
                         </li>
 
-                        <li class="dropdown">
+                    @endif
+                    <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ trans('links.Language') }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="{{ url('en') }}">
+                                    <a href="#">
                                         En
                                     </a>
 
-                                    <a href="{{ url('fr') }}">
+                                    <a href="#">
                                         Fr
                                     </a>
 
@@ -99,11 +100,6 @@
                                 </li>
                             </ul>
                         </li>
-
-                        
-
-
-                    @endif
                 </ul>
             </div>
         </div>

@@ -27,7 +27,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
     public function links()
     {
         return $this->hasMany('App\Models\Link');
@@ -37,4 +36,5 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\ActivityLog');
     }
+
 }

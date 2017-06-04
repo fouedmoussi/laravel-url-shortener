@@ -10,11 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/all-links', 'LinkShortenerController@linksList');
+
 Route::group(['middleware' => ['trackUserNavigation']], function(){
 	Auth::routes();
 
 	Route::group(['prefix' => '{lang?}'], function () {
-		Route::get('/my-links', 'LinkShortenerController@linksList');
+
+		Route::get('/my-links', 'LinkShortenerController@userLinks');
 		Route::get('/', 'LinkShortenerController@getForm');
 		Route::post('/', 'LinkShortenerController@postForm');
 		Route::delete('/link/{id}', 'LinkShortenerController@deleteLink');
