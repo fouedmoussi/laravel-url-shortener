@@ -17,19 +17,6 @@ class AppServiceProvider extends ServiceProvider
     {
         // For using MariaDB 
         Schema::defaultStringLength(191);
-        
-        if(Schema::hasTable('links'))
-        {
-            //Links older than 24 hours must be deleted
-            Link::where('created_at', '<=', Carbon::now()->subDays(1)->toDateTimeString())->delete();
-
-            view()->composer('layouts.app', function($view)
-            {
-                $view->with('totalLinks', Link::count());
-            });
-        }
-
-
     }
 
     /**
