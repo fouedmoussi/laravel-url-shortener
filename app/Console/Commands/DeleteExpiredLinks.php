@@ -45,10 +45,6 @@ class DeleteExpiredLinks extends Command
             Link::where('created_at', '<=', Carbon::now()->subDays(1)->toDateTimeString())->delete();
 
             $this->info('Successfully deleted expired links');
-
-            view()->composer('layouts.app', function ($view) {
-                $view->with('totalLinks', Link::count());
-            });
         }
     }
 }
