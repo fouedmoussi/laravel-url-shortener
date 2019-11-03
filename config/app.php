@@ -168,7 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Mbarwick83\Shorty\ShortyServiceProvider::class,
+        Shivella\Bitly\BitlyServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
 
         /*
@@ -230,8 +230,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'Shorty'    => Mbarwick83\Shorty\Facades\Shorty::class,
         'GeoIP' => \Torann\GeoIP\Facades\GeoIP::class,
+        'Bitly' => Shivella\Bitly\Facade\Bitly::class,
 
     ],
 

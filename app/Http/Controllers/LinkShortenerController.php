@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Link;
 use Illuminate\Support\Facades\Auth;
-//Google Url Shortener API Package for Laravel see https://github.com/mbarwick83/shorty
-use Mbarwick83\Shorty\Facades\Shorty;
+
 class LinkShortenerController extends Controller
 {
     
@@ -62,10 +61,9 @@ class LinkShortenerController extends Controller
      */
     public function postForm(Request $request)
     {
-    	
     	//If validation fails, we return to the main page with an error info
  		$this->validate($request, [
-        	'link' => 'required|max:255|url',
+        	'link' => 'required|max:255',
     	]);
 
     	//Now let's check if we already have the link in our database. If so, we get the first result
@@ -78,8 +76,8 @@ class LinkShortenerController extends Controller
 	      //Else we create a new unique URL
 	    } else {
 	      //First we create a new unique Hash
-	       $newHash = Shorty::shorten($request->link);
-	      
+	      $newHash = app('bitly')->getUrl($request->link); 
+
 	      //Now we create a new database record
 	      Link::create(array('url' => $request->link,'hash' => $newHash, 'user_id' => Auth::user()->id));
 

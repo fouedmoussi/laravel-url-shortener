@@ -23,7 +23,7 @@ Route::group(['middleware' => ['trackUserNavigation']], function(){
 
 	// Routes to create and return a shortened URL given a long URL
 	Route::get('/', 'LinkShortenerController@getForm')->name('get-form');
-	Route::post('/', 'LinkShortenerController@postForm')->name('post-form');
+	Route::post('/shortify', 'LinkShortenerController@postForm')->name('post-form');
 
 	//Route to delete a specific link by {id}
 	Route::delete('/link/{id}', 'LinkShortenerController@deleteLink')->name('delete-link');

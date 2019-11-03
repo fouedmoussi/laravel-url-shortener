@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // For using MariaDB 
         Schema::defaultStringLength(191);
+        \View::share('totalLinks', Link::count());
     }
 
     /**
