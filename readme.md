@@ -5,7 +5,7 @@ Laravel Url Shortener app built on top of Bitly Url Shortener API
 
 + Shortify links.
 
-+ Cron job scheduled to delete Links older than 24 hours automatically according to server datetime.
++ Cron job scheduled to delete Links older than 24 hours automatically.
 
 + Multi language support (fr,en).
 
