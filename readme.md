@@ -9,8 +9,6 @@ Laravel Url Shortener app built on top of Bitly Url Shortener API
 
 + Multi language support (fr,en).
 
-+ tracking log of all user activity.
-
 + Auth scaffold.
 
 
