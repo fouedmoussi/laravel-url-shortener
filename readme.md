@@ -14,4 +14,5 @@ Laravel Url Shortener app built on top of Google Url Shortener API
 + Auth scaffold.
 
 
-
+An example of this demo  is running at
+[https://peaceful-gorge-45802.herokuapp.com/](https://peaceful-gorge-45802.herokuapp.com/)
