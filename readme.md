@@ -1,5 +1,5 @@
 # laravel-url-shortener
-Laravel Url Shortener app built on top of Google Url Shortener API
+Laravel Url Shortener app built on top of Bitly Url Shortener API
 
 ### Features
 
