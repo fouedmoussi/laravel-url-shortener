@@ -17,8 +17,6 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
 
-
-
 // Artisan::command('delete-old-links', function () {
 //     $this->comment("deleted");
 // })->describe('Automatically delete links older than 24h');

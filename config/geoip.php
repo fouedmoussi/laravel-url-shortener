@@ -52,23 +52,23 @@ return [
     'services' => [
 
         'maxmind_database' => [
-            'class' => \Torann\GeoIP\Services\MaxMindDatabase::class,
+            'class'         => \Torann\GeoIP\Services\MaxMindDatabase::class,
             'database_path' => storage_path('app/geoip.mmdb'),
-            'update_url' => 'https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz',
-            'locales' => ['en'],
+            'update_url'    => 'https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz',
+            'locales'       => ['en'],
         ],
 
         'maxmind_api' => [
-            'class' => \Torann\GeoIP\Services\MaxMindWebService::class,
-            'user_id' => env('MAXMIND_USER_ID'),
+            'class'       => \Torann\GeoIP\Services\MaxMindWebService::class,
+            'user_id'     => env('MAXMIND_USER_ID'),
             'license_key' => env('MAXMIND_LICENSE_KEY'),
-            'locales' => ['en'],
+            'locales'     => ['en'],
         ],
 
         'ipapi' => [
-            'class' => \Torann\GeoIP\Services\IPApi::class,
-            'secure' => true,
-            'key' => env('IPAPI_KEY'),
+            'class'          => \Torann\GeoIP\Services\IPApi::class,
+            'secure'         => true,
+            'key'            => env('IPAPI_KEY'),
             'continent_path' => storage_path('app/continents.json'),
         ],
 
@@ -125,19 +125,19 @@ return [
     */
 
     'default_location' => [
-        'ip' => '127.0.0.0',
-        'iso_code' => 'TN',
-        'country' => 'Tunisia',
-        'city' => 'Tunis',
-        'state' => 'Tunis',
-        'state_name' => 'Tunis',
+        'ip'          => '127.0.0.0',
+        'iso_code'    => 'TN',
+        'country'     => 'Tunisia',
+        'city'        => 'Tunis',
+        'state'       => 'Tunis',
+        'state_name'  => 'Tunis',
         'postal_code' => '06510',
-        'lat' => 41.31,
-        'lon' => -72.92,
-        'timezone' => 'Africa/Tunis',
-        'continent' => 'AF',
-        'default' => true,
-        'currency' => 'TND',
+        'lat'         => 41.31,
+        'lon'         => -72.92,
+        'timezone'    => 'Africa/Tunis',
+        'continent'   => 'AF',
+        'default'     => true,
+        'currency'    => 'TND',
     ],
 
 ];
