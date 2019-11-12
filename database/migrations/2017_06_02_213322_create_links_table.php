@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateLinksTable extends Migration
 {
@@ -13,13 +13,13 @@ class CreateLinksTable extends Migration
      */
     public function up()
     {
-        Schema::create('links', function(Blueprint $table) {
-                $table->increments('id');
-                $table->text('url');
-                $table->string('hash',400);
-                $table->unsignedInteger('user_id');
-                $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-                $table->timestamps();
+        Schema::create('links', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('url');
+            $table->string('hash', 400);
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
