@@ -51,13 +51,13 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'checkLinksNumber' => \App\Http\Middleware\CheckLinksNumber::class,
+        'auth'                => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic'          => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings'            => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'                 => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'               => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'throttle'            => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'checkLinksNumber'    => \App\Http\Middleware\CheckLinksNumber::class,
         'trackUserNavigation' => \App\Http\Middleware\TrackUserNavigation::class,
     ];
 }

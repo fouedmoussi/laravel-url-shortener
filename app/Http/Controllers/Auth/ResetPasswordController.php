@@ -34,7 +34,7 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->redirectTo ='/?lang='.app()->getLocale();
+        $this->redirectTo = '/?lang='.app()->getLocale();
         $this->middleware('guest');
     }
 }
