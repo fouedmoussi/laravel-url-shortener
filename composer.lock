@@ -108,20 +108,24 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.6.2",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "1bf24f7334fe16c88bf9d467863309ceaf285b01"
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/1bf24f7334fe16c88bf9d467863309ceaf285b01",
-                "reference": "1bf24f7334fe16c88bf9d467863309ceaf285b01",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
                 "shasum": ""
             },
             "require": {
+                "ext-mbstring": "*",
                 "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35"
             },
             "type": "library",
             "autoload": {
@@ -146,7 +150,11 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2017-03-29T16:04:15+00:00"
+            "support": {
+                "issues": "https://github.com/erusev/parsedown/issues",
+                "source": "https://github.com/erusev/parsedown/tree/1.7.x"
+            },
+            "time": "2019-12-30T22:54:17+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2489,55 +2497,6 @@
             "time": "2015-05-11T14:41:42+00:00"
         },
         {
-            "name": "mbarwick83/shorty",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mbarwick83/shorty.git",
-                "reference": "5218397c216c3288ad5a9bf4d6e92879a24813b5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mbarwick83/shorty/zipball/5218397c216c3288ad5a9bf4d6e92879a24813b5",
-                "reference": "5218397c216c3288ad5a9bf4d6e92879a24813b5",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.1",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Mbarwick83\\Shorty\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mike Barwick",
-                    "email": "mike@barwickandco.com"
-                }
-            ],
-            "description": "Google Url Shortener API Package for Laravel 5.1",
-            "homepage": "https://github.com/mbarwick83/shorty",
-            "keywords": [
-                "api",
-                "google",
-                "laravel",
-                "shortener",
-                "url"
-            ],
-            "time": "2016-11-07T21:06:19+00:00"
-        },
-        {
             "name": "mockery/mockery",
             "version": "0.9.9",
             "source": {
@@ -3870,5 +3829,6 @@
     "platform": {
         "php": ">=5.6.4"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
 }
